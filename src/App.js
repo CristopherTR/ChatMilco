@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{ Component } from 'react';
+import {connect} from 'react-redux';
+import {sendMessage} from './components/Chat/Chat.js';
+import './components/Chat/Chat.css'
 
-function App() {
+class App extends Component {
+  render(){
+  const {feed, sendMessage} = this.props;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>MILCO RESPONDE</h1>
+      <div class="chatbox">
+        <div class="chatlogs">
+          <div class="chat friend">
+              <p>
+                {feed.map(entry => <div class="chat self"><div class="user-photo"><img src="https://www.lima2019.pe/images/milco/milco-2.png" /></div><p class="chat-message">{entry.text}</p></div>)}
+              </p>
+          </div>
+        </div>  
+        <div class="chat-form">
+          <input type="text" onKeyDown={(e) => e.keyCode === 13 ? sendMessage(e.target.value):null}/>
+        </div>
+      </div>
     </div>
   );
 }
+}
 
-export default App;
+const mapStateToProps = state => ({
+  feed: state
+});
+
+export default connect(mapStateToProps,{
+  sendMessage
+})(App);

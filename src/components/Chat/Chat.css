@@ -1,0 +1,97 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: tahoma, sans-serif;
+	box-sizing: border-box;
+}
+body{
+	background: rgba(73,155,234,1);
+	background-attachment: fixed;
+}
+h1{
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
+     color: #131313;
+    letter-spacing: .15em;
+    text-shadow: 
+      1px -1px 0 #767676, 
+      -1px 2px 1px #737272, 
+      -2px 4px 1px #767474, 
+      -3px 6px 1px #787777;
+}
+.chatbox{
+	width: 500px;
+	min-width: 390px;
+	height: 600px;
+	background: rgba(0,0,0,0.4);
+	color: #000;
+	padding: 25px;
+	margin: 20px auto;
+	box-shadow: 0 3px #ccc; 
+	border-radius: 20px;
+}
+.chatlogs{
+	padding: 10px;
+	width: 100%;
+	height: 450px;
+	background: #fbfbfb;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border-radius: 15px;
+}
+.chatlogs::-webkit-scrollbar{
+	width: 10px;
+}
+
+.chatlogs::-webkit-scrollbar-thumb{
+	border-radius: 5px;
+	background: rgba(0,0,0,.1);
+}
+.chat{
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	margin-bottom: 10px;
+}
+.chat .user-photo{
+	width: 60px;
+	height: 60px;
+	background: #ccc;
+	border-radius: 50%;
+}
+.chat .chat-message{
+	width: 79%;
+	padding: 15px;
+	margin: 5px 10px 0;
+	background: #1ddced;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 15px;
+}
+.friend .chat-message{
+	background: #1adda4;
+}
+.self .chat-message{
+	background: #1ddced;
+}
+.chat-form{
+	margin-top: 20px;
+	display: flex;
+	align-items: flex-start;
+}
+.chat-form input{
+	background: #fbdbfb;
+	width: 75%;
+	height: 50px;
+	border:2px solid #eee;
+	border-radius: 15px;
+	resize: none;
+	padding: 10px;
+	font-size: 15px;
+	color: #000;
+}
+.chat-form input:focus{
+	background: #fff
+}
